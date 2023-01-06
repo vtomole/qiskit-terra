@@ -636,7 +636,7 @@ def _write_custom_operation(file_obj, name, operation, custom_operations):
         has_definition = True
         # Build internal definition to support overloaded subclasses by
         # calling definition getter on object
-        operation.definition  # pylint: disable=pointless-statement
+        operation._define()  # pylint: disable=pointless-statement
         data = common.data_to_binary(operation._definition, write_circuit)
         size = len(data)
         num_ctrl_qubits = operation.num_ctrl_qubits
